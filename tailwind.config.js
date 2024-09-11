@@ -18,6 +18,9 @@ module.exports = {
         veryPaleRed: "hsl(13, 100%, 96%)",
         veryLightGray: "hsl(0, 0%, 98%)",
       },
+      boxShadow: {
+        "custom-red": "0px 10px 16px -8px rgba(255, 0, 0, 0.6)", // Custom red shadow
+      },
     },
   },
   plugins: [],

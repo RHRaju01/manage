@@ -6,9 +6,12 @@ const nav = document.getElementById("menu");
 const sliderContainer = document.querySelector(".slider");
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelector(".dots");
-
 const testimonial = document.querySelectorAll(".testimonial");
 const testimonials = document.querySelector(".testimonials");
+// News letter
+const emailInput = document.getElementById("emailInput");
+const form = document.getElementById("emailForm");
+const error = document.querySelector(".error");
 
 btn.addEventListener("click", () => {
   btn.classList.toggle("open");
@@ -135,3 +138,31 @@ toggleClassesAndStyles(document.body.clientWidth);
 if (document.body.clientWidth < 768) {
   slider();
 }
+
+const isValidEmail = (email) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
+emailInput.addEventListener("input", () => {
+  const emailValue = emailInput.value;
+  if (!isValidEmail(emailValue)) {
+    error.classList.remove("hidden");
+    emailInput.style.color = "red";
+  } else {
+    error.classList.add("hidden");
+    emailInput.style.color = "hsl(227, 12%, 61%)";
+  }
+});
+
+form.addEventListener("submit", (e) => {
+  const emailValue = emailInput.value;
+  if (!isValidEmail(emailValue)) {
+    e.preventDefault();
+    error.classList.remove("hidden");
+    emailInput.style.color = "red";
+  } else {
+    error.classList.add("hidden");
+    emailInput.style.color = "hsl(227, 12%, 61%)";
+  }
+});

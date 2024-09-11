@@ -29,7 +29,7 @@
         <!-- Button -->
         <a
           href="#"
-          class="baseline hidden rounded-full bg-brightRed p-3 px-6 pt-2 text-white shadow-current hover:bg-brightRedLight md:block"
+          class="baseline shadow-custom-red hidden rounded-full bg-brightRed p-3 px-6 pt-2 text-white shadow-current hover:bg-brightRedLight md:block"
           >Get Started</a
         >
 
@@ -78,7 +78,7 @@
           <div class="flex justify-center md:justify-start">
             <a
               href="#"
-              class="baseline rounded-full bg-brightRed p-3 px-6 pt-2 text-white hover:bg-brightRedLight"
+              class="shadow-custom-red baseline rounded-full bg-brightRed p-3 px-6 pt-2 text-white hover:bg-brightRedLight"
               >Get Started</a
             >
           </div>
@@ -260,7 +260,7 @@
         <div class="my-16">
           <a
             href="#"
-            class="baseline rounded-full bg-brightRed p-3 px-6 pt-2 text-white hover:bg-brightRedLight"
+            class="shadow-custom-red baseline rounded-full bg-brightRed p-3 px-6 pt-2 text-white hover:bg-brightRedLight"
             >Get Started</a
           >
         </div>
@@ -398,20 +398,23 @@
 
         <!-- Input Container -->
         <div class="flex flex-col justify-between">
-          <form>
+          <form id="emailForm">
             <div class="flex space-x-3">
               <input
-                type="text"
+                type="email"
+                id="emailInput"
                 class="flex-1 rounded-full px-4 focus:outline-none"
-                placeholder="Updates in your inbox"
+                placeholder="Updates in your inbox..."
               />
               <button
-                class="rounded-full bg-brightRed px-6 py-2 text-white hover:bg-brightRedLight focus:outline-none"
+                type="submit"
+                class="btn rounded-full bg-brightRed px-6 py-2 text-white hover:bg-brightRedLight focus:outline-none"
               >
                 Go
               </button>
             </div>
           </form>
+          <div class="error hidden md:-mt-10">Please enter a valid email</div>
           <div class="hidden text-white md:block">
             Copyright &copy; 2024, All Rights Reserved
           </div>
